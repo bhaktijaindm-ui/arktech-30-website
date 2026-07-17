@@ -570,6 +570,13 @@ h1, h2, h3, h4, h5, h6 {
     transition: color 0.5s, border-color 0.5s;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 102; /* Keeps buttons above overlays */
+}
+
 /* Header scrolled state */
 .main-header.scrolled {
     padding: 0.9rem 0;
@@ -3101,5 +3108,16 @@ h1, h2, h3, h4, h5, h6 {
     .luxury-form .form-grid-2 {
         grid-template-columns: 1fr !important;
         gap: 0 !important;
+    }
+
+    /* Mobile Header Layout Alignments */
+    .header-actions {
+        gap: 12px !important;
+    }
+
+    .header-actions .btn-nav-cta {
+        padding: 0.45rem 0.9rem !important; /* Compact button styling fits neatly in a single row */
+        font-size: 0.65rem !important;
+        letter-spacing: 1px !important;
     }
 }
