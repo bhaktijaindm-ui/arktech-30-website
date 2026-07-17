@@ -2831,18 +2831,53 @@ h1, h2, h3, h4, h5, h6 {
         letter-spacing: 2px !important;
     }
 
+    /* Header compact spacing on mobile */
+    .main-header {
+        padding: 1.1rem 0 !important;
+        transition: background-color var(--transition-medium), padding var(--transition-medium);
+    }
+    
+    .main-header.scrolled {
+        padding: 0.8rem 0 !important;
+    }
+
     /* Navigation Drawer & Hamburger menu */
     .mobile-menu-toggle {
         display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 24px;
+        height: 15px; /* compact, perfectly centered vertically with logo */
         cursor: pointer;
+        z-index: 101;
     }
 
     .mobile-menu-toggle .bar {
         background-color: var(--color-bg-white) !important; /* Light on hero overlay */
+        height: 1.5px !important;
+        transition: transform var(--transition-medium), opacity var(--transition-medium), background-color var(--transition-medium);
     }
 
     .main-header.scrolled .mobile-menu-toggle .bar {
         background-color: var(--color-text-dark) !important; /* Dark on scroll */
+    }
+
+    /* Always ensure hamburger bars are white when the mobile menu is active/open */
+    .mobile-menu-toggle.active .bar {
+        background-color: var(--color-bg-white) !important;
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+    
+    .mobile-menu-toggle.active .bar:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .mobile-menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
     }
 
     .nav-menu {
@@ -2870,23 +2905,33 @@ h1, h2, h3, h4, h5, h6 {
 
     .nav-menu ul {
         flex-direction: column !important;
-        gap: 2rem !important;
-        align-items: flex-start !important;
+        gap: 1.8rem !important;
+        align-items: center !important; /* Centered layout looks extremely premium */
+        width: 100%;
+        text-align: center;
     }
 
     .nav-link {
-        color: var(--color-bg-white) !important; /* White links inside dark drawer */
-        font-size: 1.05rem !important;
+        color: rgba(255, 255, 255, 0.75) !important; /* Semi-transparent white inside drawer */
+        font-family: var(--font-serif) !important; /* Editorial serif font for luxury feel */
+        font-size: 1.25rem !important;
         font-weight: 300 !important;
-        letter-spacing: 3px !important;
+        letter-spacing: 2px !important;
+        transition: color 0.3s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--color-border-gold) !important;
     }
 
     .btn-nav-cta {
         width: 100%;
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         border-color: var(--color-border-gold) !important;
         color: var(--color-border-gold) !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 2px !important;
     }
 
     /* Hero Section cinematic overlay scale */
