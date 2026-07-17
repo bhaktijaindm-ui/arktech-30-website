@@ -3116,14 +3116,19 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     /* Mobile Header Layout Alignments */
-    .header-actions {
+    .header-container {
         display: flex !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        gap: 12px !important;
+        width: 100% !important;
     }
 
-    .header-actions .btn-nav-cta {
-        padding: 0.35rem 0.8rem !important; /* Shorter vertical button fits cleanly next to logo and hamburger */
+    .header-actions {
+        display: contents !important; /* Flattens flex hierarchy so logo, button, and hamburger share equal spacing */
+    }
+
+    .header-container .btn-nav-cta {
+        padding: 0.35rem 0.8rem !important; /* Shorter vertical button fits cleanly */
         line-height: 1 !important;
         font-size: 0.65rem !important;
         letter-spacing: 1px !important;
@@ -3131,6 +3136,8 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center !important;
         justify-content: center !important;
         height: auto !important;
+        position: relative !important;
+        top: -1.5px !important; /* Nudge button slightly up for perfect vertical centering */
     }
 
     .mobile-menu-toggle {
@@ -3139,6 +3146,8 @@ h1, h2, h3, h4, h5, h6 {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
-        display: flex !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
