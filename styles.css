@@ -604,6 +604,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 24px;
     height: 18px;
     z-index: 101;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .mobile-menu-toggle .bar {
@@ -3112,12 +3117,28 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Mobile Header Layout Alignments */
     .header-actions {
+        display: flex !important;
+        align-items: center !important;
         gap: 12px !important;
     }
 
     .header-actions .btn-nav-cta {
-        padding: 0.45rem 0.9rem !important; /* Compact button styling fits neatly in a single row */
+        padding: 0.35rem 0.8rem !important; /* Shorter vertical button fits cleanly next to logo and hamburger */
+        line-height: 1 !important;
         font-size: 0.65rem !important;
         letter-spacing: 1px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+    }
+
+    .mobile-menu-toggle {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        display: flex !important;
     }
 }
