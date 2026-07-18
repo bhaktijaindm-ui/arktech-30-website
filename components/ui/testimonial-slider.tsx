@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     id: 1, 
     quote: "S Square Architects didn't just build a home; they constructed our family legacy. The way natural Punjab daylight fills the central double-height atrium in our estate is nothing short of spiritual. Their meticulous integration of modern architecture and Vastu Shastra is masterful.", 
     name: "Harmanpreet Singh Grewal", 
-    username: "Industrialist, Grewal Industries Ludhiana", 
+    username: "Industrialist, Grewal Industries", 
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=150&ixlib=rb-4.0.3" 
   },
   { 

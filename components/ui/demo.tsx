@@ -23,33 +23,33 @@ export function WorldMapDemo() {
           </span>
         </p>
         <p className="text-sm md:text-base text-stone-500 max-w-xl mx-auto mt-4 font-sans font-light leading-relaxed">
-          From our design studio in Ludhiana, we shape legacies across India. Delivering luxury residential villas, efficient corporate offices, and eco-resorts nationwide.
+          From our design studio, we shape legacies across India. Delivering luxury residential villas, efficient corporate offices, and eco-resorts nationwide.
         </p>
       </div>
       <WorldMap
         dots={[
           {
-            // Ludhiana HQ to Srinagar (Luxury Hillside Estate)
+            // Headquarters to Srinagar (Luxury Hillside Estate)
             start: { lat: 30.9010, lng: 75.8573 },
             end: { lat: 34.0837, lng: 74.7973 }
           },
           {
-            // Ludhiana HQ to New Delhi (Corporate Headquarters)
+            // Headquarters to New Delhi (Corporate Headquarters)
             start: { lat: 30.9010, lng: 75.8573 },
             end: { lat: 28.6139, lng: 77.2090 }
           },
           {
-            // Ludhiana HQ to Mumbai (Seafront Residences)
+            // Headquarters to Mumbai (Seafront Residences)
             start: { lat: 30.9010, lng: 75.8573 },
             end: { lat: 19.0760, lng: 72.8777 }
           },
           {
-            // Ludhiana HQ to Bengaluru (Hospitality Eco-Resort)
+            // Headquarters to Bengaluru (Hospitality Eco-Resort)
             start: { lat: 30.9010, lng: 75.8573 },
             end: { lat: 12.9716, lng: 77.5946 }
           },
           {
-            // Ludhiana HQ to Kolkata (Heritage Master Plan)
+            // Headquarters to Kolkata (Heritage Master Plan)
             start: { lat: 30.9010, lng: 75.8573 },
             end: { lat: 22.5726, lng: 88.3639 }
           }

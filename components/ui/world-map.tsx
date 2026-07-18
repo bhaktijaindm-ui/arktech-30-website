@@ -119,7 +119,7 @@ export function WorldMap({
           
           return (
             <g key={`points-group-${i}`}>
-              {/* Start Point (e.g. Ludhiana Head Office) */}
+              {/* Start Point (e.g. Headquarters Head Office) */}
               <g key={`start-${i}`}>
                 <circle cx={startPoint.x} cy={startPoint.y} r="3.5" fill={lineColor} />
                 <circle cx={startPoint.x} cy={startPoint.y} r="3.5" fill={lineColor} opacity="0.6">

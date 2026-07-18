@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
        15. INTERACTIVE INDIA MAP
        ========================================== */
     const hubsData = [
-        { x: 28.3, y: 18.5, title: 'Ludhiana (HQ)', desc: 'S Square Architects Design Tower / Principal Hub' },
+        { x: 28.3, y: 18.5, title: 'Headquarters (HQ)', desc: 'S Square Architects Design Tower / Principal Hub' },
         { x: 27.5, y: 10.0, title: 'Srinagar', desc: 'Luxury Hillside Villa Residence' },
         { x: 30.0, y: 27.7, title: 'New Delhi', desc: 'Sarabha Corporate Headquarters' },
         { x: 23.3, y: 52.3, title: 'Mumbai', desc: 'Seafront Luxury Gated Estate' },
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hubItems = document.querySelectorAll('.hub-item');
     const cityNodes = document.querySelectorAll('.city-node');
     const curvePaths = [
-        null, // Ludhiana doesn't have a curve to itself
+        null, // Headquarters doesn't have a curve to itself
         document.querySelector('.path-srinagar'),
         document.querySelector('.path-delhi'),
         document.querySelector('.path-mumbai'),
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize with Ludhiana HQ active
+    // Initialize with Headquarters (HQ) active
     if (hubItems.length > 0) {
         setTimeout(() => {
             activateHub(0);
