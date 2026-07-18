@@ -16,7 +16,7 @@ interface MapProps {
 
 export function WorldMap({
   dots = [],
-  lineColor = "#C9A45C", // Premium Gold color to match Aura Studio theme
+  lineColor = "#C9A45C", // Premium Gold color to match S Square Architects theme
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const { theme } = useTheme();

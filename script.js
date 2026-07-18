@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA STUDIO ARCHITECTS - INTERACTIVE LOGIC (VANILLA JS)
+   S Square Architects - INTERACTIVE LOGIC (VANILLA JS)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // Simulate newsletter registration
-            newsletterFeedback.textContent = "Thank you. You've been subscribed to the AURA Studio Journal.";
+            newsletterFeedback.textContent = "Thank you. You've been subscribed to the S Square Architects Journal.";
             newsletterFeedback.style.display = 'block';
             newsletterForm.reset();
             
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
        15. INTERACTIVE INDIA MAP
        ========================================== */
     const hubsData = [
-        { x: 28.3, y: 18.5, title: 'Ludhiana (HQ)', desc: 'AURA Studio Design Tower / Principal Hub' },
+        { x: 28.3, y: 18.5, title: 'Ludhiana (HQ)', desc: 'S Square Architects Design Tower / Principal Hub' },
         { x: 27.5, y: 10.0, title: 'Srinagar', desc: 'Luxury Hillside Villa Residence' },
         { x: 30.0, y: 27.7, title: 'New Delhi', desc: 'Sarabha Corporate Headquarters' },
         { x: 23.3, y: 52.3, title: 'Mumbai', desc: 'Seafront Luxury Gated Estate' },
