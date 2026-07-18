@@ -517,21 +517,22 @@ h1, h2, h3, h4, h5, h6 {
     justify-self: start;
     display: flex;
     align-items: center;
-    gap: 14px; /* Proper spacing beside logo: 12-16px */
+    gap: 12px; /* Proper spacing beside logo: 12-16px */
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .logo-symbol {
-    width: 48px; /* Logo width around 45-55px */
-    height: 48px;
+    width: 32px; /* Set logo symbol to 32px */
+    height: 32px;
     flex-shrink: 0;
 }
 
 .logo-text {
     font-family: var(--font-serif);
-    font-size: 34px; /* Elegant serif font size: 34-42px */
+    font-size: 24px; /* Reduced to 24px to prevent wrapping and align nicely */
     font-weight: 300;
-    letter-spacing: 5px; /* Letter spacing: 4-6px */
+    letter-spacing: 4px; /* Letter spacing: 4-6px */
     color: #C9A66B; /* Premium gold accent color (#C9A66B) */
     text-transform: uppercase;
     line-height: 1;
@@ -2905,13 +2906,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-symbol {
-        width: 32px !important;
-        height: 32px !important;
+        width: 26px !important;
+        height: 26px !important;
     }
 
     .logo-text {
-        font-size: 22px !important;
-        letter-spacing: 3px !important;
+        font-size: 18px !important;
+        letter-spacing: 2px !important;
     }
 
     /* Navigation Drawer & Hamburger menu */
