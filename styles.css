@@ -490,58 +490,81 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     width: 100%;
-    padding: var(--spacing-md) 0;
+    height: 96px; /* Header initial height between 88-96px */
     z-index: 100;
-    transition: padding 0.5s, background-color 0.5s, border-bottom 0.5s;
-    border-bottom: 1px solid transparent;
-    background-color: transparent;
+    display: flex;
+    align-items: center;
+    transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Centering navigation mathematically regardless of logo/button widths */
     align-items: center;
-    max-width: var(--container-width);
+    width: 100%;
+    max-width: 1400px; /* Container width of 1400px */
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 60px; /* Left and right padding of 60px */
 }
 
 .logo-brand {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-weight: 400;
-    letter-spacing: 4px;
+    justify-self: start;
     display: flex;
     align-items: center;
-    color: var(--color-bg-white); /* White logo initially */
-    transition: color 0.5s;
+    gap: 14px; /* Proper spacing beside logo: 12-16px */
+    text-decoration: none;
 }
 
-.logo-brand span {
-    transition: color var(--transition-fast);
+.logo-symbol {
+    width: 48px; /* Logo width around 45-55px */
+    height: 48px;
+    flex-shrink: 0;
 }
 
-.logo-text-secondary {
-    color: var(--color-border-gold);
-    margin-left: 8px;
+.logo-text {
+    font-family: var(--font-serif);
+    font-size: 34px; /* Elegant serif font size: 34-42px */
     font-weight: 300;
+    letter-spacing: 5px; /* Letter spacing: 4-6px */
+    color: #C9A66B; /* Premium gold accent color (#C9A66B) */
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-block;
+}
+
+.nav-menu {
+    justify-self: center;
 }
 
 .nav-menu ul {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 36px; /* Equal spacing (32-40px) between menu items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--color-bg-white); /* White links initially */
+    font-size: 14px; /* Font size: 14px */
+    font-weight: 600; /* Font weight: 600 */
+    letter-spacing: 1.5px; /* Letter spacing: 1.5px */
+    text-transform: uppercase; /* Uppercase */
+    color: rgba(255, 255, 255, 0.75);
     position: relative;
     padding: 8px 0;
-    transition: color 0.5s;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #C9A66B; /* Smooth transition of text color to gold */
 }
 
 .nav-link::after {
@@ -550,11 +573,11 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px;
-    background-color: var(--color-border-gold);
+    height: 1px; /* Thin gold underline */
+    background-color: #C9A66B;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform var(--transition-medium);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-link:hover::after, .nav-link.active::after {
@@ -562,38 +585,63 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: left;
 }
 
-.btn-nav-cta {
-    padding: 0.6rem 1.4rem;
-    font-size: 0.7rem;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Soft white border initially */
-    color: var(--color-bg-white); /* White CTA text initially */
-    transition: color 0.5s, border-color 0.5s;
-}
-
 .header-actions {
+    justify-self: end;
     display: flex;
     align-items: center;
     gap: 20px;
-    z-index: 102; /* Keeps buttons above overlays */
+    z-index: 102;
+}
+
+.btn-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px; /* Height: 52px */
+    padding: 0 28px; /* Horizontal padding: 26-30px */
+    border: 1px solid #C9A66B; /* Thin gold border */
+    background: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-nav-cta:hover {
+    background-color: #C9A66B; /* Background becomes gold */
+    color: #111111; /* Text changes to black */
+    border-color: #C9A66B;
 }
 
 /* Header scrolled state */
 .main-header.scrolled {
-    padding: 0.9rem 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(229, 224, 218, 0.5);
-    box-shadow: var(--shadow-glass);
+    height: 78px; /* Reduce header height slightly (96px -> 78px) */
+    background: #111111 !important; /* Change header background to solid dark (#111111) */
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
 }
 
-.main-header.scrolled .logo-brand,
-.main-header.scrolled .nav-link {
-    color: var(--color-text-dark);
-}
-
-.main-header.scrolled .btn-nav-cta {
-    border-color: var(--color-border-gold);
-    color: var(--color-text-dark);
+/* Tablet responsive header scaling */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 30px !important;
+    }
+    .logo-text {
+        font-size: 26px !important;
+    }
+    .nav-menu ul {
+        gap: 20px !important;
+    }
+    .btn-nav-cta {
+        padding: 0 18px !important;
+        font-size: 11px !important;
+    }
 }
 
 /* Mobile burger menu */
@@ -614,8 +662,8 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-menu-toggle .bar {
     width: 100%;
     height: 1.5px;
-    background-color: var(--color-text-dark);
-    transition: transform var(--transition-medium), opacity var(--transition-medium);
+    background-color: #ffffff; /* keep hamburger visible on dark overlays */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* 8. HERO SECTION (FULL SCREEN LUXURY BANNER) */
@@ -2845,12 +2893,25 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Header compact spacing on mobile */
     .main-header {
-        padding: 1.1rem 0 !important;
-        transition: background-color var(--transition-medium), padding var(--transition-medium);
+        height: 72px !important; /* Compact header height on mobile */
+        padding: 0 !important;
+        background: rgba(17, 17, 17, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
     }
     
     .main-header.scrolled {
-        padding: 0.8rem 0 !important;
+        height: 64px !important; /* Slightly more compact on scroll */
+    }
+
+    .logo-symbol {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .logo-text {
+        font-size: 22px !important;
+        letter-spacing: 3px !important;
     }
 
     /* Navigation Drawer & Hamburger menu */
@@ -2866,18 +2927,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .mobile-menu-toggle .bar {
-        background-color: var(--color-bg-white) !important; /* Light on hero overlay */
+        background-color: #ffffff !important; /* Always white on dark header */
         height: 1.5px !important;
-        transition: transform var(--transition-medium), opacity var(--transition-medium), background-color var(--transition-medium);
-    }
-
-    .main-header.scrolled .mobile-menu-toggle .bar {
-        background-color: var(--color-text-dark) !important; /* Dark on scroll */
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     /* Always ensure hamburger bars are white when the mobile menu is active/open */
     .mobile-menu-toggle.active .bar {
-        background-color: var(--color-bg-white) !important;
+        background-color: #ffffff !important;
     }
 
     .mobile-menu-toggle.active .bar:nth-child(1) {
@@ -2896,19 +2953,20 @@ h1, h2, h3, h4, h5, h6 {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 300px;
+        width: 100%; /* Full screen overlay */
+        max-width: 100%;
         height: 100vh;
-        background-color: rgba(20, 20, 20, 0.98); /* Premium dark charcoal drawer */
+        background-color: rgba(17, 17, 17, 0.98); /* Solid dark overlay */
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         z-index: 100;
         display: flex !important;
         flex-direction: column;
         justify-content: center;
         padding: 4rem 2rem !important;
         transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.4);
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: none;
+        box-shadow: none;
     }
 
     .nav-menu.active {
@@ -2917,23 +2975,23 @@ h1, h2, h3, h4, h5, h6 {
 
     .nav-menu ul {
         flex-direction: column !important;
-        gap: 1.8rem !important;
+        gap: 2.2rem !important;
         align-items: center !important; /* Centered layout looks extremely premium */
         width: 100%;
         text-align: center;
     }
 
     .nav-link {
-        color: rgba(255, 255, 255, 0.75) !important; /* Semi-transparent white inside drawer */
+        color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white inside drawer */
         font-family: var(--font-serif) !important; /* Editorial serif font for luxury feel */
-        font-size: 1.25rem !important;
+        font-size: 1.5rem !important;
         font-weight: 300 !important;
         letter-spacing: 2px !important;
         transition: color 0.3s;
     }
 
     .nav-link:hover, .nav-link.active {
-        color: var(--color-border-gold) !important;
+        color: #C9A66B !important;
     }
 
     .btn-nav-cta {
